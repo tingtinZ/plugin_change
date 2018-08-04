@@ -24,7 +24,7 @@ init(State) ->
 
 
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
--spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
+
 do(State) ->
     Apps = case rebar_state:current_app(State) of
                undefined ->
@@ -89,7 +89,7 @@ generate(Txt, Erl) ->
         forward ->
             Str3 =  "    lists:foreach(fun(I) -> io:format(\"~p~n\",[I]) end, lists:seq("++LoopStart++","++LoopEnd++")),\n";
         reverse ->
-            Str3 =  "    lists:foreach(fun(I) -> io:format(\"~p~n\",[I]) end, lists:reverse:(lists:seq("++LoopEnd++","++LoopStart++"))),\n";
+            Str3 =  "    lists:foreach(fun(I) -> io:format(\"~p~n\",[I]) end, lists:reverse:(lists:seq("++LoopEnd++","++LoopStart++"))),\n"
     end,
 
     Str4 = "ok.",
